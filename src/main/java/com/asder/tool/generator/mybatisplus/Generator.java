@@ -1,16 +1,16 @@
 package com.asder.tool.generator.mybatisplus;
 
+import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 public class Generator {
 	
-	public static void run(String outputDir, String author, DbType dbType, String driverName, String url, 
+	public static void run(String outputDir, String author, DbType dbType, String driverName, String url,
                            String username, String password, NamingStrategy naming, String includeTablename) {
 		
         AutoGenerator mpg = new AutoGenerator();

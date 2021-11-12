@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 import com.asder.tool.generator.mybatisplus.DriverName;
 import com.asder.tool.generator.mybatisplus.Generator;
 import com.asder.tool.generator.utils.MyPrintStream;
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
+import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.google.common.base.Preconditions;
 
@@ -31,7 +31,7 @@ public class App
 	private static Set<String> dbSourceTypeSet = new HashSet<String>(){{
 
 		for(DbType type : DbType.values()) {
-			add(type.getValue());
+			add(type.getDb());
 		}
 	}};
 
@@ -144,7 +144,7 @@ public class App
         final JTextField outputDirText = new JTextField(20);
         outputDirText.setBounds(100,getInterval(),250,25);
         panel.add(outputDirText);
-        outputDirText.setText("F://temp");
+        outputDirText.setText("/Users/wuyifei/workspace/");
 
         JLabel authorLabel = new JLabel("作者:");
         authorLabel.setBounds(10,getInterval(),250,25);
@@ -153,7 +153,7 @@ public class App
         final JTextField authorText = new JTextField(20);
         authorText.setBounds(100,getInterval(),250,25);
         panel.add(authorText);
-        authorText.setText("user");
+        authorText.setText("wuyifei");
 
         JLabel dbTypeLabel = new JLabel("数据源类型:");
         dbTypeLabel.setBounds(10,getInterval(),250,25);
@@ -180,7 +180,7 @@ public class App
         final JTextField urlText = new JTextField(20);
         urlText.setBounds(100,getInterval(),250,25);
         panel.add(urlText);
-        urlText.setText("jdbc:mysql://localhost:3306/vcloud?useUnicode=true&amp;characterEncoding=UTF-8&amp;generateSimpleParameterMetadata=true");
+        urlText.setText("jdbc:mysql://172.17.6.232:3306/lizhi_risk_perception?useUnicode=true&amp;characterEncoding=UTF-8&amp;generateSimpleParameterMetadata=true");
 
         JLabel usernameLabel = new JLabel("用户名:");
         usernameLabel.setBounds(10,getInterval(),250,25);
@@ -198,13 +198,13 @@ public class App
         final JTextField passwordText = new JTextField(20);
         passwordText.setBounds(100,getInterval(),250,25);
         panel.add(passwordText);
-        passwordText.setText("admin123");
+        passwordText.setText("db_admin#ops.fm");
 
         JLabel policyLabel = new JLabel("表名生成策略:");
         policyLabel.setBounds(10,getInterval(),250,25);
         panel.add(policyLabel);
 
-        NamingStrategy[] namingItem = {NamingStrategy.nochange, NamingStrategy.underline_to_camel};
+        NamingStrategy[] namingItem = {NamingStrategy.no_change, NamingStrategy.underline_to_camel};
         final JComboBox<?> namingCombo = new JComboBox<Object>(namingItem);
         namingCombo.setBounds(100,getInterval(),250,25);
         panel.add(namingCombo);
